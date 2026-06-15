@@ -1,0 +1,17 @@
+#!/bin/bash
+seed=$1
+ORIGINAL_DIR=$(pwd)
+
+module load python
+
+worker_dir="worker_${seed}"
+mkdir -p ${worker_dir}
+
+cp ./LHS_sampler.py ./${worker_dir}
+cp ./cbgo.py ./${worker_dir}
+
+cd ./${worker_dir}
+
+
+python LHS_sampler.py $seed
+python cbgo.py --output-dir "$ORIGINAL_DIR" --seed "$seed"
