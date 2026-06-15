@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+
+module load python
+export PYTHONPATH=/home/mac732/.local/lib/python3.12/site-packages:$PYTHONPATH
+
+#
+workerdir=worker$1
+#
+mkdir -p $workerdir
+#
+cp -r template_outer.tar.gz $workerdir/
+#
+cd $workerdir/
+#
+tar -xzf template_outer.tar.gz
+#
+cd template_outer/
+
+./pestpp-mou pest/prams_bbgo.pst /H c275:4020
+

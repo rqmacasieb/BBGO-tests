@@ -1,0 +1,25 @@
+pcf version=2
+* control data keyword
+pestmode                                 estimation
+noptmax                                -1
+svdmode                                 1
+maxsing                          10000000
+eigthresh                           1e-06
+eigwrite                                1
+mou_objectives                 total_penalties
+opt_dec_var_groups             pumprates
+opt_constraint_groups          less_than,greater_than
+mou_dv_population_file         ./pest/merged.dv_pop.csv
+mou_obs_population_restart_file ./pest/merged.obs_pop.csv
+* parameter groups external
+./pest/outer_repo.pargp_data.csv
+* parameter data external
+./pest/outer_repo.par_data.csv
+* observation data external
+./pest/outer_repo.obs_data.csv
+* model command line
+python forward_pbrun.py
+* model input external
+./pest/outer_repo.tplfile_data.csv
+* model output external
+./pest/outer_repo.insfile_data.csv

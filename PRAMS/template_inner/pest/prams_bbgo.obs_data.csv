@@ -1,0 +1,12 @@
+obsnme,obsval,weight,obgnme
+pumptotal,-113.5,1,less_than
+quinns,-22.8,1,greater_than
+yanchep,-1.2,1,greater_than
+whitfords,-20.6,1,greater_than
+sw_flux,10000,1,obs
+pf_sw_flux,0.4,1,greater_than
+tds,320,1,less_than
+pf_tds,0,1,obs
+total_penalties,0,1,l_obj
+total_penalties_var,0,1,l_obj
+ei,0,1,obs
